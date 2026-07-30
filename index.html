@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>For Anu ❤️</title><style>
+body{margin:0;font-family:Arial;background:linear-gradient(#ff9ecf,#6a4c93);color:#fff;display:flex;align-items:center;justify-content:center;height:100vh;overflow:hidden}
+.card{background:rgba(255,255,255,.15);padding:24px;border-radius:20px;text-align:center;backdrop-filter:blur(10px);max-width:700px}
+button{padding:12px 22px;border:none;border-radius:25px;font-size:18px}
+#msg{white-space:pre-wrap;display:none}
+.heart{position:fixed;font-size:24px;animation:fall 3s linear forwards}
+@keyframes fall{from{transform:translateY(-10vh)}to{transform:translateY(110vh)}}
+</style></head><body><div class="card">
+<h1>Happy Girlfriend Day ❤️</h1><h2>Anu</h2>
+<div id="count"></div><button id="btn" style="display:none">💝 Open My Surprise ❤️</button>
+<div id="msg"></div><h3 id="end"></h3></div>
+<script>
+const target=new Date('2026-08-01T00:00:00');
+const c=document.getElementById('count'),b=document.getElementById('btn');
+let i=setInterval(()=>{let d=target-new Date();if(d<=0){clearInterval(i);c.innerHTML='';b.style.display='inline-block';return;}
+let s=Math.floor(d/1000),D=Math.floor(s/86400);s%=86400;let h=Math.floor(s/3600);s%=3600;let m=Math.floor(s/60);s%=60;
+c.innerHTML=`⏳ ${D}d ${h}h ${m}m ${s}s`;},1000);
+b.onclick=()=>{
+const A=new (window.AudioContext||window.webkitAudioContext)();
+let o=A.createOscillator(),g=A.createGain();o.connect(g);g.connect(A.destination);o.frequency.value=523;g.gain.value=.03;o.start();o.stop(A.currentTime+2);
+for(let k=0;k<120;k++){let e=document.createElement('div');e.className='heart';e.textContent='❤️';e.style.left=Math.random()*100+'vw';e.style.animationDelay=(Math.random())+'s';document.body.appendChild(e);}
+b.style.display='none';
+let t=`My Dearest Anu ❤️
+
+Happy Girlfriend Day!
+
+Anu, main tumhara saath apne aakhiri dam tak dunga. Mujhe pata hai ki zindagi me bahut si mushkilein aayengi, lekin jab tum mere saath hogi, mujhe yakeen hai ki hum har problem ka saamna milkar kar lenge.
+
+Tum meri strength ho, meri muskaan ki wajah ho aur meri zindagi ka sabse khoobsurat hissa ho.
+
+I Love You, Anu. ❤️
+
+Forever Yours,
+Shivam ❤️`;
+let m=document.getElementById('msg');m.style.display='block';let x=0;let iv=setInterval(()=>{m.textContent+=t[x++]||'';if(x>t.length){clearInterval(iv);document.getElementById('end').textContent='Anu, Will You Stay With Me Forever? ❤️';}},35);
+}
+</script></body></html>
